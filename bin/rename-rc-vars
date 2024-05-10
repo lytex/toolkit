@@ -1,6 +1,7 @@
 #! /usr/bin/env bash
+# shellcheck source-path=..
 
-set -uo pipefail
+set -euo pipefail
 
 #### Detect Toolkit Project Root ####
 # if realpath is not available, create a semi-equivalent function
@@ -15,27 +16,27 @@ if [[ ! -d "$TOOLKIT_ROOT/bin" ]] || [[ ! -d "$TOOLKIT_ROOT/config" ]]; then
   exit 1
 fi
 
+source "$TOOLKIT_ROOT/lib/shared-functions.sh"
 
 function usage() {
-    echo "Usage: bin/images"
-    echo ""
-    echo "Prints information about overleaf docker images on the system"
+  echo "Usage: bin/rename-rc-vars"
+  echo ""
+  echo "Updates config/overleaf.rc to ensure variables are renamed from 'SHARELATEX_' to 'OVERLEAF_'"
+  echo ""
 }
 
 function __main__() {
-    if [[ "${1:-null}" == "help" ]] \
-        || [[ "${1:-null}" == "--help" ]] ; then
-        usage && exit
-    fi
+  if [[ "${1:-null}" == "help" ]] || [[ "${1:-null}" == "--help" ]]; then
+    usage
+    exit
+  fi
 
-    echo "---- Community Edition Images ----"
-    docker images sharelatex/sharelatex
-    echo "---- Server Pro Images ----"
-    docker images quay.io/sharelatex/sharelatex-pro
-    echo "---- TexLive Images ----"
-    docker images quay.io/sharelatex/texlive-full
-    echo "---- Git Bridge Images ----"
-    docker images quay.io/sharelatex/git-bridge
+  echo "This script will update your config/overleaf.rc."
+  echo "We recommend backing up your config with bin/backup-config."
+
+  rebrand_sharelatex_env_variables 'overleaf.rc'
+
+  echo "Done."
 }
 
 __main__ "$@"

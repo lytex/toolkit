@@ -1,5 +1,75 @@
 # Changelog
 
+## 2024-05-08
+### Added
+- Add warning for using docker installing via `snap`.
+
+## 2024-04-22
+### Added
+- Updated default [`version`](https://github.com/overleaf/toolkit/blob/master/lib/config-seed/version) to `5.0.3`.
+
+  :warning: This is a security release. This release also fixes a critical bug in a database migration as included in release 5.0.1. The recovery procedure for doc versions has been updated compared to 5.0.2. Please check the [release notes](https://github.com/overleaf/overleaf/wiki/Release-Notes-5.x.x#server-pro-503) for details.
+
+  Note: Server Pro version 4.2.4 contains the equivalent security update for the 4.x.x release line.
+
+## 2024-04-22
+### Added
+- Updated default [`version`](https://github.com/overleaf/toolkit/blob/master/lib/config-seed/version) to `5.0.2`.
+
+  :warning: This is a security release. This release also fixes a critical bug in a database migration as included in release 5.0.1. Please check the [release notes](https://github.com/overleaf/overleaf/wiki/Release-Notes-5.x.x#server-pro-502) for details.
+
+  Note: Server Pro version 4.2.4 contains the equivalent security update for the 4.x.x release line.
+### Fixed
+- Retracted release 5.0.2
+
+  :warning: We have identified a few corner cases in the recovery procedure for docs.
+
+## 2024-04-18
+### Fixed
+- Retracted release 5.0.1
+
+  :warning: We have identified a critical bug in a database migration that causes data loss. Please defer upgrading to release 5.0.1 until further notice on the mailing list. Please hold on to any backups that were taken prior to upgrading to version 5.0.1.
+
+## 2024-04-09
+### Added
+
+- Print column headers from `bin/images`
+- List Git Bridge images via `bin/images`
+
+## 2024-04-02
+### Added
+- Updated default [`version`](https://github.com/overleaf/toolkit/blob/master/lib/config-seed/version) to `5.0.1`.
+
+  :warning: This is a major release. Please check the [release notes](https://github.com/overleaf/overleaf/wiki/Release-Notes-5.x.x#server-pro-501) for details.
+
+- Rebranded 'SHARELATEX_' variables to 'OVERLEAF_'
+
+
+## 2024-02-27
+### Fixed
+
+- Relaunch `bin/upgrade` after updating Toolkit code.
+
+  We are planning to expand the scope of the `bin/upgrade` script in a following release and these changes need to be applied _while_ running `bin/upgrade`.
+
+  With this release there is a one-time requirement that you choose "Yes" to "Perform code update?" and "No" to "Upgrade image?". After the Toolkit code has been updated, run `bin/upgrade` again and choose to upgrade the image.
+
+## 2024-02-16
+### Added
+- Updated default [`version`](https://github.com/overleaf/toolkit/blob/master/lib/config-seed/version) to `4.2.3`.
+
+  :warning: This is a security release. Please check the [release notes](https://github.com/overleaf/overleaf/wiki/Release-Notes--4.x.x#server-pro-423) for details.
+
+## 2024-02-14
+### Added
+- Updated default [`version`](https://github.com/overleaf/toolkit/blob/master/lib/config-seed/version) to `4.2.2`.
+
+  :warning: This is a security release. Please check the [release notes](https://github.com/overleaf/overleaf/wiki/Release-Notes--4.x.x#server-pro-422) for details.
+
+## 2024-01-12
+### Added
+- Updated Mongo version from 4.4 to 5.0 in config seed. Documentation on Mongo updates can be found [here](https://github.com/overleaf/overleaf/wiki/Updating-Mongo-version).
+
 ## 2023-11-10
 ### Added
 - Updated default [`version`](https://github.com/overleaf/toolkit/blob/master/lib/config-seed/version) to `4.2.0`.

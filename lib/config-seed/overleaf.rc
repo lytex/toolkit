@@ -3,9 +3,9 @@
 PROJECT_NAME=overleaf
 
 # Sharelatex container
-# Uncomment the SHARELATEX_IMAGE_NAME variable to use a user-defined image.
-# SHARELATEX_IMAGE_NAME=sharelatex/sharelatex
-SHARELATEX_DATA_PATH=data/sharelatex
+# Uncomment the OVERLEAF_IMAGE_NAME variable to use a user-defined image.
+# OVERLEAF_IMAGE_NAME=sharelatex/sharelatex
+OVERLEAF_DATA_PATH=data/overleaf
 SERVER_PRO=false
 SHARELATEX_LISTEN_IP=127.0.0.1
 SHARELATEX_PORT=8081
@@ -17,7 +17,7 @@ DOCKER_SOCKET_PATH=/var/run/docker.sock
 # Mongo configuration
 MONGO_ENABLED=true
 MONGO_DATA_PATH=data/mongo
-MONGO_IMAGE=mongo:4.4
+MONGO_IMAGE=mongo:5.0
 
 # Redis configuration
 REDIS_ENABLED=true

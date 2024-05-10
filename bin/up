@@ -52,9 +52,9 @@ function __main__() {
     exit
   fi
 
+  read_image_version
   check_config
   read_config
-  read_image_version
 
   if [[ "$MONGO_ENABLED" == "true" && "$IMAGE_VERSION_MAJOR" -ge 4 ]]; then
     initiate_mongo_replica_set
