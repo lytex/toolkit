@@ -3,3 +3,6 @@ version: '2.2'
 services:
     sharelatex:
         image: sharelatex/sharelatex:with-texlive-full
+        volumes:
+            - ./sharelatex-663e6baa059e6615cf203526:/var/lib/overleaf/data/compiles/663e6baa059e6615cf203526-663e59070eda7081fa455a93/
+
